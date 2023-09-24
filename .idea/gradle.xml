@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="/media/leo/Almacen pro/Documentos/Escuela/Clarita/Proyectos/GeolocalizadorPro" />
+        <option name="modules">
+          <set>
+            <option value="/media/leo/Almacen pro/Documentos/Escuela/Clarita/Proyectos/GeolocalizadorPro" />
+            <option value="/media/leo/Almacen pro/Documentos/Escuela/Clarita/Proyectos/GeolocalizadorPro/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

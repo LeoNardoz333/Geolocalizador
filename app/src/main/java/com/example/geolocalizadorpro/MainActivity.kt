@@ -40,9 +40,30 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
             ), drawerLayout
         )
+        navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_home -> {
+                    navController.navigate(R.id.nav_home)
+                    true
+                }
+
+                R.id.nav_gallery -> {
+                    navController.navigate(R.id.nav_gallery)
+                    true
+                }
+
+                R.id.nav_slideshow -> {
+                    // Cerrar la aplicación cuando se presiona "Salir"
+                    finishAffinity()
+                    true
+                }
+
+                else -> false
+            }
+        }
         setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

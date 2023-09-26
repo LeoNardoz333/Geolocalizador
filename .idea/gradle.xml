@@ -6,11 +6,12 @@
       <GradleProjectSettings>
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="/media/leo/Almacen pro/Documentos/Escuela/Clarita/Proyectos/GeolocalizadorPro" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
-            <option value="/media/leo/Almacen pro/Documentos/Escuela/Clarita/Proyectos/GeolocalizadorPro" />
-            <option value="/media/leo/Almacen pro/Documentos/Escuela/Clarita/Proyectos/GeolocalizadorPro/app" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
       </GradleProjectSettings>

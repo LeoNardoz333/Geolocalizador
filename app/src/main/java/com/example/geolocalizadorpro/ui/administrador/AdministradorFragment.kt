@@ -45,14 +45,44 @@ class AdministradorFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val usuario=""
-        val pass=""
+        val etusuario:EditText=binding.etUsuarioAdmin
+        val etpass:EditText=binding.etPasswordAdmin
         // Ahora puedes obtener una referencia al botón en onViewCreated
         val ingresar: Button = binding.btnIngresarAdmin
 
         ingresar.setOnClickListener {
             // Aquí puedes manejar el clic en el botón
-            Toast.makeText(requireContext(), "Botón clickeado", Toast.LENGTH_SHORT).show()
+            val url="http://192.168.1.100/geolocalizador/usuarios.php"
+            val requestQueue: RequestQueue = Volley.newRequestQueue(requireContext())
+
+            val stringRequest=StringRequest(
+                Request.Method.GET,url,Response.Listener { response ->
+                    val elementos=response.split("も")
+                    if(elementos.size>=5) {
+                        val id = elementos[0]
+                        val nombre = elementos[1]
+                        val user = elementos[2]
+                        val pass = elementos[3]
+                        val permisos = elementos[4]
+                        Toast.makeText(
+                            requireContext(),
+                            "ID: $id, Nombre: $nombre, Usuario: $user, Contraseña: $pass, Tipo: $permisos",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                },
+                Response.ErrorListener { error ->
+                    // Manejar errores de la solicitud
+                    Toast.makeText(requireContext(), "Error: $error", Toast.LENGTH_SHORT).show()
+                }
+            )
+            val usuario:String=etusuario.text.toString()
+            val pass:String=etpass.text.toString()
+            if(usuario=="leo"&&pass=="123")
+            {
+                Toast.makeText(requireContext(), "Acceso correcto owo", Toast.LENGTH_SHORT).show()
+            }
+            requestQueue.add(stringRequest)
         }
     }
 

@@ -52,7 +52,9 @@ class AdministradorFragment : Fragment() {
 
         ingresar.setOnClickListener {
             // Aquí puedes manejar el clic en el botón
-            val url="http://192.168.1.100/geolocalizador/usuarios.php"
+            val usuario:String=etusuario.text.toString()
+            val pass:String=etpass.text.toString()
+            val url="http://192.168.0.14/geolocalizador/usuarios.php?usuario=$usuario&pass=$pass"
             val requestQueue: RequestQueue = Volley.newRequestQueue(requireContext())
 
             val stringRequest=StringRequest(
@@ -64,24 +66,15 @@ class AdministradorFragment : Fragment() {
                         val user = elementos[2]
                         val pass = elementos[3]
                         val permisos = elementos[4]
-                        Toast.makeText(
-                            requireContext(),
-                            "ID: $id, Nombre: $nombre, Usuario: $user, Contraseña: $pass, Tipo: $permisos",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+                        Toast.makeText(requireContext(),"Acceso correcto.",Toast.LENGTH_SHORT).show()
+                    }else
+                        Toast.makeText(requireContext(),"Usuario u contraseña incorrectos.",Toast.LENGTH_SHORT).show()
                 },
                 Response.ErrorListener { error ->
                     // Manejar errores de la solicitud
                     Toast.makeText(requireContext(), "Error: $error", Toast.LENGTH_SHORT).show()
                 }
             )
-            val usuario:String=etusuario.text.toString()
-            val pass:String=etpass.text.toString()
-            if(usuario=="leo"&&pass=="123")
-            {
-                Toast.makeText(requireContext(), "Acceso correcto owo", Toast.LENGTH_SHORT).show()
-            }
             requestQueue.add(stringRequest)
         }
     }

@@ -18,6 +18,7 @@ import com.android.volley.toolbox.Volley
 import android.widget.EditText
 import android.widget.Toast
 import android.widget.Button
+import android.content.Intent
 
 class AdministradorFragment : Fragment() {
     private var _binding: FragmentAdministradorBinding? = null
@@ -60,13 +61,15 @@ class AdministradorFragment : Fragment() {
             val stringRequest=StringRequest(
                 Request.Method.GET,url,Response.Listener { response ->
                     val elementos=response.split("も")
-                    if(elementos.size>=5) {
+                    if(elementos.size>=6) {
                         val id = elementos[0]
                         val nombre = elementos[1]
-                        val user = elementos[2]
-                        val pass = elementos[3]
-                        val permisos = elementos[4]
+                        val apellidoP = elementos[2]
+                        val apellidoM = elementos[3]
+                        val pass = elementos[4]
+                        val permisos = elementos[5]
                         Toast.makeText(requireContext(),"Acceso correcto.",Toast.LENGTH_SHORT).show()
+                        //val intent = Intent(requireContext(),activity_menu::menu.kotlin)
                     }else
                         Toast.makeText(requireContext(),"Usuario u contraseña incorrectos.",Toast.LENGTH_SHORT).show()
                 },

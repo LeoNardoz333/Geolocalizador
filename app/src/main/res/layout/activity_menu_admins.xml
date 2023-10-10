@@ -6,23 +6,95 @@
     android:layout_height="match_parent"
     tools:context=".Menu_admins">
 
+    <ImageView
+        android:id="@+id/imgAdmin"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/usuario"/>
+
     <TextView
         android:id="@+id/tvMenu"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imgAdmin"
         android:text="Menú Administradores"
-        android:autoSizeMaxTextSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="25dp"
         android:gravity="center"
-        android:layout_marginTop="170dp"/>
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnRefris"
+        android:layout_width="215dp"
+        android:layout_height="60dp"
+        android:textSize="18dp"
+        android:text="refrigeradores"
+        android:layout_below="@+id/tvMenu"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/amarillo"/>
+
+    <TextView
+        android:id="@+id/txtAdmins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Administradores"
+        android:layout_below="@+id/btnRefris"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"/>
+
+    <Button
+        android:id="@+id/btnVerAdmin"
+        android:layout_width="56dp"
+        android:layout_height="60dp"
+        android:drawableLeft="@drawable/ojo"
+        android:drawableTint="@color/white"
+        android:layout_below="@+id/txtAdmins"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/purple_200"/>
 
     <Button
         android:id="@+id/btnAddAdministrador"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="+ administrador"
-        android:layout_below="@+id/tvMenu"
-        android:layout_marginTop="8dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="56dp"
+        android:layout_height="60dp"
+        android:text="+"
+        android:textSize="20dp"
+        android:layout_below="@+id/txtAdmins"
+        android:layout_toRightOf="@+id/btnVerAdmin"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@color/verdeCenizaOscuro"/>
+
+    <Button
+        android:id="@+id/btnDeleteAdministrador"
+        android:layout_width="56dp"
+        android:layout_height="60dp"
+        android:text="-"
+        android:textSize="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btnVerAdmin"
+        android:layout_below="@+id/txtAdmins"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/Rojo_cremoso"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnRegresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        app:backgroundTint="@color/verdeCenizaMasOscuro"
+        app:srcCompat="@drawable/goback"
+        app:tint="@color/white"/>
 
 </RelativeLayout>
